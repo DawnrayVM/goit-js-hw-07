@@ -1,4 +1,4 @@
-//TODO!
+// TODO
 
 // Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество
 // элементов в input и нажимает кнопку Создать, после чего рендерится коллекция.
@@ -13,25 +13,28 @@
 // Размеры самого первого div - 30px на 30px
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes
-const divContolRef = document.querySelector('#controls');
+const divContolsRef = document.querySelector('#controls');
 const boxesRef = document.querySelector('#boxes');
 
 const randomRGB = () => Math.floor(Math.random() * 254);
-const r = randomRGB();
-const g = randomRGB();
-const b = randomRGB();
+// const divResize = (newDivRef.);
+let amount;
 const inputRef = document.querySelector('#controls input');
-const amount = inputRef.value;
 
-divContolRef.addEventListener('click', event => {
-target
-
-})
+divContolsRef.addEventListener('click', event => {
+  amount = event.target.value;
+  console.log(event.target.value);
+});
 
 const createBoxes = amount => {
   for (let i = 0; i < amount; i += 1) {
     const newDivRef = document.createElement('div');
-    newDivRef.setAttribute('style', `background-color: rgb(${r}, ${g}, ${b}); width: 30px; height: 30px;`);
+    const r = randomRGB();
+    const g = randomRGB();
+    const b = randomRGB();
+    let width = 30;
+    let height = 30;
+    newDivRef.setAttribute('style', `background-color: rgb(${r}, ${g}, ${b}); width: ${width}px; height: ${height}px;`);
     boxesRef.appendChild(newDivRef);
   }
 };
